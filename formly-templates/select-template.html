@@ -1,0 +1,5 @@
+<select ng-model="model[options.key]"
+        class="form-control"
+        ng-options="{{to.modelValue}} as {{to.display}} for item in to.options">
+    <option value="">-- {{to.placeholder}} --</option>
+</select>

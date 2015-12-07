@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <!-- include: "type": "css", "files": "CSS/**/*.css" -->
+    <!-- /include -->
+</head>
+
+<body ng-app="FormlyTestApp" ng-controller="MainCtrl as vm">
+    <div>
+        <div>
+        <form name="vm.activeUsernameForm" novalidate>
+            <formly-form model="vm.activeUsernameModel" fields="vm.activeUsernameFields" options="vm.activeUsernameOptions" form="vm.activeUsernameForm">
+            </formly-form>
+        </form>
+        </div>
+        <div style=" display: inline-block" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>User Info</h2>
+            <hr />
+            <form ng-submit="vm.onProfileEditSubmit()" name="vm.profileForm" novalidate>
+                <formly-form model="vm.profileModel" fields="vm.profileFields" options="vm.profileOptions" form="vm.profileForm">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                         ng-show="vm.editMode">
+                        <button type="button"
+                                class="btn btn-default col-xs-12 col-sm-12 col-md-12 col-lg-2"
+                                ng-click="vm.options.resetModel()">Reset</button>
+                        <button type="submit"
+                                class="btn btn-primary submit-button col-xs-12 col-sm-12 col-md-12 col-lg-offset-8 col-lg-2"
+                                ng-disabled="vm.profileForm.$invalid">Submit</button>
+                    </div>
+                </formly-form>
+            </form>
+        </div>
+        <div style="margin-top: 40px; display:inline-block" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Add New User</h2>
+            <hr />
+            <form ng-submit="vm.onAddUsername()" name="vm.usernameForm" novalidate>
+                <formly-form model="vm.usernameModel" fields="vm.usernameFields" options="vm.usernameOptions" form="vm.usernameForm">
+                    <button type="submit"
+                            class="btn btn-primary submit-button col-xs-12 col-sm-12 col-md-12 col-lg-offset-10 col-lg-2"
+                            ng-disabled="vm.usernameForm.$invalid">Add Username</button>
+                </formly-form>
+            </form>
+        </div>
+    </div>
+        <!-- bower:js -->
+        <!-- endbower -->
+        <!-- include: "type": "js", "files": "Scripts/**/*.js" -->
+        <!-- /include -->
+</body>
+
+</html>

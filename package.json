@@ -1,0 +1,14 @@
+{
+  "name": "Angular-Formly-Example",
+  "version": "1.0.0",
+  "description": "Test Formly App",
+  "main": "release.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "grunt-contrib-copy": "^0.8.2"
+  }
+}

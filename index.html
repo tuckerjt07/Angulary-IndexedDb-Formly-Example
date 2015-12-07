@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <!-- include: "type": "css", "files": "CSS/**/*.css" -->
+    <link href="CSS/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="CSS/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+    <link href="CSS/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="CSS/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- /include -->
+</head>
+
+<body ng-app="FormlyTestApp" ng-controller="MainCtrl as vm">
+    <div>
+        <div>
+        <form name="vm.activeUsernameForm" novalidate>
+            <formly-form model="vm.activeUsernameModel" fields="vm.activeUsernameFields" options="vm.activeUsernameOptions" form="vm.activeUsernameForm">
+            </formly-form>
+        </form>
+        </div>
+        <div style=" display: inline-block" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>User Info</h2>
+            <hr />
+            <form ng-submit="vm.onProfileEditSubmit()" name="vm.profileForm" novalidate>
+                <formly-form model="vm.profileModel" fields="vm.profileFields" options="vm.profileOptions" form="vm.profileForm">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                         ng-show="vm.editMode">
+                        <button type="button"
+                                class="btn btn-default col-xs-12 col-sm-12 col-md-12 col-lg-2"
+                                ng-click="vm.options.resetModel()">Reset</button>
+                        <button type="submit"
+                                class="btn btn-primary submit-button col-xs-12 col-sm-12 col-md-12 col-lg-offset-8 col-lg-2"
+                                ng-disabled="vm.profileForm.$invalid">Submit</button>
+                    </div>
+                </formly-form>
+            </form>
+        </div>
+        <div style="margin-top: 40px; display:inline-block" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Add New User</h2>
+            <hr />
+            <form ng-submit="vm.onAddUsername()" name="vm.usernameForm" novalidate>
+                <formly-form model="vm.usernameModel" fields="vm.usernameFields" options="vm.usernameOptions" form="vm.usernameForm">
+                    <button type="submit"
+                            class="btn btn-primary submit-button col-xs-12 col-sm-12 col-md-12 col-lg-offset-10 col-lg-2"
+                            ng-disabled="vm.usernameForm.$invalid">Add Username</button>
+                </formly-form>
+            </form>
+        </div>
+    </div>
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/api-check/dist/api-check.js"></script>
+        <script src="bower_components/angular-formly/dist/formly.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+        <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/angular-indexeddb/src/release/angular-indexed-db.js"></script>
+        <!-- endbower -->
+        <!-- include: "type": "js", "files": "Scripts/**/*.js" -->
+        <script src="Scripts/Controllers/Main.controller.js"></script>
+        <script src="Scripts/Factories/FormlyHelper.factory.js"></script>
+        <script src="Scripts/Factories/ProfileOptions.factory.js"></script>
+        <script src="Scripts/Factories/States.factory.js"></script>
+        <script src="Scripts/Factories/Usernames.factory.js"></script>
+        <script src="Scripts/Models/Formly.ActiveUsername.constant.js"></script>
+        <script src="Scripts/Models/Formly.AddUser.costant.js"></script>
+        <script src="Scripts/Models/Formly.Profile.constant.js"></script>
+        <script src="Scripts/app.js"></script>
+        <!-- /include -->
+</body>
+
+</html>
